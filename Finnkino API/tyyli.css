@@ -1,0 +1,54 @@
+/*
+Color scheme:
+#222629
+#474B4f
+#6b6e70
+#f6ff16
+*/
+
+* {
+  color: white;
+}
+
+#otsikko {
+  color: #f6ff16;
+  text-align: center;
+  font-size: 50px;
+  padding-top: 20px;
+}
+
+html, body {
+  height: 100%;
+}
+body {
+  background-color: #222629;
+}
+
+.container {
+  background-color: #222629
+  height: 100%;
+}
+
+.card {
+  background-color: #474B4f;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+}
+
+#elokuvat {
+  background-color: inherit;
+}
+
+.icon {
+  width: 17px;
+  padding-right: 3px;
+}
+
+.card-title {
+  padding-bottom: 7  px;
+}
+
+.card-subtitle {
+  padding-bottom: 7px;
+}
