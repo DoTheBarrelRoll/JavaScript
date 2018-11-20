@@ -5,16 +5,14 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" href="icon.png"
-
-  <!-- Bootstrap CSS -->
+  <link rel="icon" href="icon.png" <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="tyyli.css">
   <script src="koodi.js">
 
   </script>
 
-  <title>Peruna</title>
+  <title>Finnkino TEST</title>
 </head>
 
 <body>
@@ -23,53 +21,50 @@
     <div class="jumbotron">
       <h1 id="otsikko">Finnkino leffahaku</h1>
     </div>
-        <form>
-          <div class="form-group">
-            <label for="mySelect">Valitse teatterisi</label>
-            <select name="mySelect" class="form-control" id="teatteri">
-              <option value="1029">Valitse alue/teatteri</option>
-              <option value="1014">Pääkaupunkiseutu</option>
-              <option value="1012">Espoo</option>
-              <option value="1039">Espoo: OMENA</option>
-              <option value="1038">Espoo: SELLO</option>
-              <option value="1002">Helsinki</option>
-              <option value="1045">Helsinki: ITIS</option>
-              <option value="1031">Helsinki: KINOPALATSI</option>
-              <option value="1032">Helsinki: MAXIM</option>
-              <option value="1033">Helsinki: TENNISPALATSI</option>
-              <option value="1013">Vantaa: FLAMINGO</option>
-              <option value="1015">Jyväskylä: Fantasia</option>
-              <option value="1016">Kuopio: SCALA</option>
-              <option value="1017">Lahti: KUVAPALATSI</option>
-              <option value="1041">Lappeenranta: STRAND</option>
-              <option value="1018">Oulu: PLAZA</option>
-              <option value="1019">Pori: PROMENADI</option>
-              <option value="1021">Tampere</option>
-              <option value="1034">Tampere: CINE ATLAS</option>
-              <option value="1035">Tampere: PLEVNA</option>
-              <option value="1022">Turku: KINOPALATSI</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Valitse päivämäärä</label>
-            <input type="date" class="form-control" id="pvm">
-          </div>
-          <div class="form-group">
-            <button type="button" class="btn btn-primary" onclick="getMovies()">Hae elokuvat</button>
-          </div>
-
-        </form>
-
-
-
-
-    <div class="row">
-      <div class="col">
-        <div class="card-columns" id="elokuvat">
-
-        </div>
+    <form>
+      <div class="form-group">
+        <label for="mySelect">Valitse teatterisi</label>
+        <select name="mySelect" class="form-control" id="teatteri">
+          <option value="1029">Valitse alue/teatteri</option>
+          <option value="1014">Pääkaupunkiseutu</option>
+          <option value="1012">Espoo</option>
+          <option value="1039">Espoo: OMENA</option>
+          <option value="1038">Espoo: SELLO</option>
+          <option value="1002">Helsinki</option>
+          <option value="1045">Helsinki: ITIS</option>
+          <option value="1031">Helsinki: KINOPALATSI</option>
+          <option value="1032">Helsinki: MAXIM</option>
+          <option value="1033">Helsinki: TENNISPALATSI</option>
+          <option value="1013">Vantaa: FLAMINGO</option>
+          <option value="1015">Jyväskylä: Fantasia</option>
+          <option value="1016">Kuopio: SCALA</option>
+          <option value="1017">Lahti: KUVAPALATSI</option>
+          <option value="1041">Lappeenranta: STRAND</option>
+          <option value="1018">Oulu: PLAZA</option>
+          <option value="1019">Pori: PROMENADI</option>
+          <option value="1021">Tampere</option>
+          <option value="1034">Tampere: CINE ATLAS</option>
+          <option value="1035">Tampere: PLEVNA</option>
+          <option value="1022">Turku: KINOPALATSI</option>
+        </select>
       </div>
+      <div class="form-group">
+        <label>Valitse päivämäärä</label>
+        <input type="date" class="form-control" id="pvm">
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-primary" onclick="getMovies()">Hae elokuvat</button>
+      </div>
+
+    </form>
+
+
+    <div class="card-columns" id="elokuvat">
+
     </div>
+
+    <h3 id="eikuvia"></h3>
+    <footer class="text-muted">Copyright © 2018 Miikka Niemeläinen</footer>
   </div>
 
 

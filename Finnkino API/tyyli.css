@@ -10,13 +10,6 @@ Color scheme:
   color: white;
 }
 
-#otsikko {
-  color: #f6ff16;
-  text-align: center;
-  font-size: 50px;
-  padding-top: 20px;
-}
-
 html, body {
   height: 100%;
 }
@@ -31,6 +24,16 @@ a {
   padding: 2px;
 }
 
+footer {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 0px;
+}
+
+option {
+  color: black;
+}
+
 @keyframes linkit {
 
   from {color: #f6ff16;}
@@ -42,6 +45,17 @@ a:hover {
   animation-name: linkit;
   animation-duration: 1s;
   color: #707322;
+}
+
+#otsikko {
+  color: #f6ff16;
+  text-align: center;
+  font-size: 50px;
+  padding-top: 20px;
+}
+
+#eikuvia {
+  text-align: center;
 }
 
 .container {
