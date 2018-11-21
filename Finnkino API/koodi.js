@@ -32,8 +32,8 @@ function getMovies() {
                                                                 <h5 class="card-title">` + nimet[i].innerHTML + `</h5>
                                                                 <h6 class="card-subtitle mb-2 text-muted"> <img class="icon" src="clock.png">` + aika + `</h6>
                                                                 <h6 class="card-subtitle mb-2 text-muted">` + teatterit[i].innerHTML + `</h6>
-                                                                <a href="` + esitysLinkit[i].innerHTML + `" class="card-link">Osta liput</a>
-                                                                <a href="` + tietoLinkit[i].innerHTML + `" class="card-link">Elokuvan tiedot</a>
+                                                                <a href="` + esitysLinkit[i].innerHTML + `" class="card-link" target="_blank">Osta liput</a>
+                                                                <a href="` + tietoLinkit[i].innerHTML + `" class="card-link" target="_blank">Elokuvan tiedot</a>
                                                               </div>
                                                             </div>`
 
