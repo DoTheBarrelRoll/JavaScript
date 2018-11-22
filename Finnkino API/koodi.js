@@ -20,6 +20,7 @@ function getMovies() {
       var esitysLinkit = xml.getElementsByTagName("ShowURL");
       var tietoLinkit = xml.getElementsByTagName("EventURL");
       var teatterit = xml.getElementsByTagName("TheatreAndAuditorium");
+      var rajat = xml.getElementsByTagName("RatingImageUrl");
 
       document.getElementById("elokuvat").innerHTML = "";
 
@@ -28,19 +29,20 @@ function getMovies() {
           var aika = ajat[i].innerHTML.slice(11, 16);
           document.getElementById("elokuvat").innerHTML += `<div class="card">
                                                               <img class="card-img-top" src="` + kuvat[i].innerHTML + `">
+                                                              <img id="rating" src="` + rajat[i].innerHTML + `">
                                                               <div class="card-body">
                                                                 <h5 class="card-title">` + nimet[i].innerHTML + `</h5>
-                                                                <h6 class="card-subtitle mb-2 text-muted"> <img class="icon" src="clock.png">` + aika + `</h6>
-                                                                <h6 class="card-subtitle mb-2 text-muted">` + teatterit[i].innerHTML + `</h6>
-                                                                <a href="` + esitysLinkit[i].innerHTML + `" class="card-link">Osta liput</a>
-                                                                <a href="` + tietoLinkit[i].innerHTML + `" class="card-link">Elokuvan tiedot</a>
+                                                                <h6 class="card-subtitle mb-2"> <i class="fas fa-clock"></i>` + aika + `</h6>
+                                                                <h6 class="card-subtitle mb-2"> <i class="fas fa-film"></i>` + teatterit[i].innerHTML + `</h6>
+                                                                <a href="` + esitysLinkit[i].innerHTML + `" class="btn btn-block">Osta liput</a>
+                                                                <a href="` + tietoLinkit[i].innerHTML + `" class="btn btn-block">Elokuvan tiedot</a>
                                                               </div>
                                                             </div>`
 
         }
         document.getElementById("eikuvia").innerHTML = "";
       } else {
-        document.getElementById("eikuvia").innerHTML = "<h2>Elokuvia ei löytynyt, kokeile toista päivää tai teatteria</h2>";
+        document.getElementById("eikuvia").innerHTML = `<i class="fas fa-times fa-10x"></i><br><h2>Elokuvia ei löytynyt, kokeile toista päivää tai teatteria</h2>`;
       }
 
 
