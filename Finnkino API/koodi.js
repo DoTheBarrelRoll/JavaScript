@@ -1,11 +1,21 @@
+// Copyright Miikka Niemeläinen 2018
+// All rights reserved
+
+function footer() {
+  var date = new Date();
+  document.getElementById('copyrights').innerHTML = '© 2018-' + date.getFullYear()  + ' Miikka Niemeläinen';
+}
+
 function getMovies() {
 
+  // Create the query URL by selecting the the date, slicing it to match the
+  // format used in the URL, and selecting the theatre ID from the form
   var raaka = document.getElementById("pvm").value;
   var aika = raaka.slice(8, 10) + "." + raaka.slice(5, 7) + "." + raaka.slice(0, 4);
   var teatteri = document.getElementById("teatteri").value;
   var url = "https://www.finnkino.fi/xml/Schedule/?area=" + teatteri + "&dt=" + aika;
 
-
+  // Create the XML Request
   xmlhttp = new XMLHttpRequest();
   xmlhttp.open("GET", url, true);
   xmlhttp.send()
@@ -13,7 +23,8 @@ function getMovies() {
   xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       var xml = xmlhttp.responseXML;
-      console.log(xml);
+
+      // Select the wanted information from the XML response
       var nimet = xml.getElementsByTagName("Title");
       var ajat = xml.getElementsByTagName("dttmShowStart");
       var kuvat = xml.getElementsByTagName("EventMediumImagePortrait");
@@ -22,8 +33,12 @@ function getMovies() {
       var teatterit = xml.getElementsByTagName("TheatreAndAuditorium");
       var rajat = xml.getElementsByTagName("RatingImageUrl");
 
+      // Clear the site of previous movies if the user wants to do another
+      // search
       document.getElementById("elokuvat").innerHTML = "";
 
+      // If the XML response contains movies, insert the selected information
+      // on a Bootstrap Card object, and add it to the site
       if (nimet.length > 0) {
         for (var i = 0; i < nimet.length; i++) {
           var aika = ajat[i].innerHTML.slice(11, 16);
@@ -40,18 +55,15 @@ function getMovies() {
                                                             </div>`
 
         }
+        // Remove the error message if the new response contains movies
         document.getElementById("eikuvia").innerHTML = "";
       } else {
+        // if no movies are found for the specified date or theatre, display
+        // an error message
         document.getElementById("eikuvia").innerHTML = `<i class="fas fa-times fa-10x"></i><br><h2>Elokuvia ei löytynyt, kokeile toista päivää tai teatteria</h2>`;
       }
 
 
     }
   }
-}
-
-function test() {
-  var pvm = document.getElementById("pvm").value;
-  var muotoiltu = pvm.slice(8, 10) + "." + pvm.slice(5, 7) + "." + pvm.slice(0, 4);
-  alert(muotoiltu);
 }

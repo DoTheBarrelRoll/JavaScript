@@ -1,1 +1,0 @@
-node C:\Users\Miikka\Documents\JavaScript\node_server\node_modules\http-server\bin\http-server
